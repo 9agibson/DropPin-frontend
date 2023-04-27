@@ -4,10 +4,11 @@ import {FaMapMarkerAlt} from 'react-icons/fa'
 import {AiOutlineCloseSquare} from 'react-icons/ai'
 import axios from 'axios'
 
+
 export default function Login({setShowLogin, setCurrentUser, myStorage}) {
     const [error, setError] = useState(false)
     const usernameRef = useRef();
-    
+    const serverUrl = process.env.REACT_APP_SERVER_URL
     const passwordRef = useRef();
 
     const handleLogin = async (e) => {
@@ -17,7 +18,7 @@ export default function Login({setShowLogin, setCurrentUser, myStorage}) {
             password: passwordRef.current.value
         }
         try{
-            const res = await axios.post("http://localhost:8800/api/users/login", user);
+            const res = await axios.post(`${serverUrl}/api/users/login`, user);
             myStorage.setItem("user", res.data.username)
             setCurrentUser(res.data.username)
             setError(false)

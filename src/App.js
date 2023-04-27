@@ -27,7 +27,8 @@ export default function App() {
     zoom: 4,
     
   });
-
+  
+  const serverUrl = process.env.REACT_APP_SERVER_URL
   const handleMarkerClick = (id, lat, long)=>{
     setCurrentPlaceId(id)
     setViewport({ ...viewport, latitude: lat, longitude: long, });
@@ -47,9 +48,11 @@ export default function App() {
   };
 
   useEffect(()=>{
+    
     const getPins = async ()=>{
+      
       try{
-        const res = await axios.get('http://localhost:8800/api/pins');
+        const res = await axios.get(`${serverUrl}/api/pins`);
         setPins(res.data)
       }catch(err) {
         console.log(err)
@@ -57,7 +60,7 @@ export default function App() {
     }
     getPins();
     
-  }, [])
+  }, [serverUrl])
 
   const handleSubmit = async (e) =>{
     e.preventDefault();
@@ -70,7 +73,8 @@ export default function App() {
       long: newPlace.long
     }
     try{
-      const res = await axios.post("http://localhost:8800/api/pins", newPin);
+      
+      const res = await axios.post(`${serverUrl}/api/pins`, newPin);
       setPins([...pins, res.data]);
       setNewPlace(null)
     }catch(err) {

@@ -10,6 +10,7 @@ export default function Register({ setShowRegister }) {
     const usernameRef = useRef();
     const emailRef = useRef();
     const passwordRef = useRef();
+    const serverUrl = process.env.REACT_APP_SERVER_URL
 
     const handleRegister = async (e) => {
         e.preventDefault();
@@ -19,7 +20,7 @@ export default function Register({ setShowRegister }) {
             password: passwordRef.current.value
         }
         try{
-            await axios.post("http://localhost:8800/api/users/register", newUser);
+            await axios.post(`${serverUrl}/api/users/register`, newUser);
             setError(false)
             setSuccess(true)
           }catch(err) {
