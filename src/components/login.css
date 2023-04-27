@@ -1,0 +1,61 @@
+.loginContainer {
+    z-index: 1;
+    position: absolute;
+    width: 300px;
+    height: 250px;
+    padding: 20px;
+    background-color: white;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.loginContainer > form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: auto;
+}
+
+.btn__register {
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    color: white;
+    background-color: tomato;
+    border: 1px solid tomato;
+}
+
+.btn__register:hover{
+    color:tomato;
+    background-color: white;
+    transition-duration: 300ms; 
+}
+.logo {
+    font-size: 25px;
+    padding: 5px;
+    margin: auto;
+    padding-bottom: 10px;
+}
+.success{
+    text-align: center;
+    color: green;
+    font-size: 12px;
+}
+
+.failure{
+    text-align: center;
+    color: red;
+    font-size: 12px;
+}
+
+.close__btn {
+    position: absolute;
+    font-size: 20px;
+    top: 5px;
+    right: 5px;
+}
