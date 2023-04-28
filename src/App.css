@@ -91,6 +91,29 @@ select{
     position: absolute;
     z-index: 1;
 }
+.instructions {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 1;
+    position: absolute;
+    width: 500px;
+    height: 300px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 4rem;
+    padding: 5px;
+}
+.instructions > h1 {
+    color: tomato;
+}
+
+
 
 @media only screen and (max-width: 600px) {
     .buttons,.logout{

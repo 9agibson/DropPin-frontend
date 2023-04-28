@@ -8,6 +8,7 @@ import axios from 'axios'
 import {format} from 'timeago.js'
 import Register from './components/Register'
 import Login from './components/Login'
+import {AiOutlineCloseSquare} from 'react-icons/ai'
 
 
 export default function App() {
@@ -21,9 +22,10 @@ export default function App() {
   const [currentPlaceId, setCurrentPlaceId] = useState(null);
   const [showRegister, setShowRegister] = useState(false)
   const [showLogin, setShowLogin] = useState(false)
+  const [showInstructions, setShowInstructions] = useState(true)
   const [viewport, setViewport] = useState({
-    latitude: 47.040182,
-    longitude: 17.071727,
+    latitude: 37.0902,
+    longitude: -95.7129,
     zoom: 4,
     
   });
@@ -99,6 +101,7 @@ export default function App() {
       onDblClick = {handleAddClick}
       doubleClickZoom = {false}
       onViewportChange= {(viewport) => setViewport(viewport)}
+      
       >
       
       {pins.map(p=>(
@@ -179,7 +182,17 @@ export default function App() {
           <Login setShowLogin={setShowLogin} setCurrentUser={setCurrentUser} myStorage={myStorage}/>
           </div>)}
           
-       <small className='copyright'>Copyright &copy; Aaron Gibson {(new Date().getFullYear())}</small> 
+       <small className='copyright'>Copyright &copy; Aaron Gibson {(new Date().getFullYear())}</small>
+       {showInstructions && (
+        <div className='instructions'>
+            <div className='logo'><FaMapMarkerAlt style={{color: 'slateblue'}}/>DropPin</div>
+            <h1>Thanks for checking out my Pin App</h1>
+            <h3>Feel free to create an account and leave some pins for yourself.</h3>
+            <h3>To leave a pin just double click anywhere on the map!</h3>
+            <AiOutlineCloseSquare className='close__btn' onClick={() => setShowInstructions(false)}/>
+          
+        </div>
+       )} 
     </ReactMapGL>
     
     </div>
