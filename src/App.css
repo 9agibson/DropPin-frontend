@@ -85,6 +85,12 @@ select{
 .register {
     background-color: slateblue;
 }
+.copyright {
+    left: 50%;
+    bottom: 10px;
+    position: absolute;
+    z-index: 1;
+}
 
 @media only screen and (max-width: 600px) {
     .buttons,.logout{

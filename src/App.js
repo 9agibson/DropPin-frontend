@@ -179,7 +179,7 @@ export default function App() {
           <Login setShowLogin={setShowLogin} setCurrentUser={setCurrentUser} myStorage={myStorage}/>
           </div>)}
           
-        
+       <small className='copyright'>Copyright &copy; Aaron Gibson {(new Date().getFullYear())}</small> 
     </ReactMapGL>
     
     </div>
