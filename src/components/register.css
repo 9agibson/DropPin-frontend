@@ -59,3 +59,9 @@
     top: 5px;
     right: 5px;
 }
+@media only screen and (max-width: 600px) {
+    .registerContainer{
+        height:310px
+    }
+    
+  }

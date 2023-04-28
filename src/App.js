@@ -94,7 +94,7 @@ export default function App() {
       {...viewport}
       onMove={evt =>  setViewport(evt.viewState)}
       style={{width: "100vw", height: "100vh", }}
-      mapStyle="mapbox://styles/mapbox/outdoors-v12"
+      mapStyle="mapbox://styles/mapbox/streets-v12"
       mapboxAccessToken={process.env.REACT_APP_MAPBOX}
       onDblClick = {handleAddClick}
       doubleClickZoom = {false}
