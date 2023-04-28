@@ -86,5 +86,11 @@ select{
     background-color: slateblue;
 }
 
-
+@media only screen and (max-width: 600px) {
+    .buttons,.logout{
+        top: 20px;
+        right: 20px;
+    }
+    
+  }
 
