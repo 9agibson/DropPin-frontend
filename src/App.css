@@ -113,6 +113,17 @@ select{
     color: tomato;
 }
 
+.title {
+    z-index: 1; 
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    width: 300px;
+    top: 10px;
+    left: 10px;
+    font-size: 18px;
+}
+
 
 
 @media only screen and (max-width: 600px) {

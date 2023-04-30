@@ -103,7 +103,10 @@ export default function App() {
       onViewportChange= {(viewport) => setViewport(viewport)}
       
       >
-      
+      <div className='title'>
+      <FaMapMarkerAlt style={{color: 'slateblue'}} />
+        <h3>DropPin</h3>
+      </div>
       {pins.map(p=>(
         <>
         <Marker  longitude={p.long} latitude={p.lat} anchor="bottom" >
